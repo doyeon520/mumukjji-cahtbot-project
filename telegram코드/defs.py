@@ -24,7 +24,7 @@ chat_id = 906950734
 def get_tablebylocation(place):
     df = pd.DataFrame(columns=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r'])
     dong = place.split()[-1]
-    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='kh98124h')
+    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='')
     # Connection 으로부터 Cursor 생성
     curs = conn.cursor()
     sql = "select * from ourmz.store WHERE store_addr like '%{}%'".format(dong)
@@ -44,7 +44,7 @@ def get_tablebylocation(place):
 
 def get_menu(menu_input):
     menu=[]
-    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='kh98124h')
+    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='')
     # Connection 으로부터 Cursor 생성
     curs = conn.cursor()
     sql = "select * from ourmz.menu where menu_name = '{}'".format(menu_input)
@@ -60,7 +60,7 @@ def get_menu(menu_input):
 
 def menu():
     menu=[]
-    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='kh98124h')
+    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='')
     # Connection 으로부터 Cursor 생성
     curs = conn.cursor()
     sql = "select * from ourmz.menu"
@@ -138,7 +138,7 @@ def get_levenshtein(word,word_list):
 
 #장소, 메뉴에따른 데이터프레임
 def get_tablebymenu(menu_input, df):
-    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='kh98124h')
+    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='')
     # Connection 으로부터 Cursor 생성
     curs = conn.cursor()
     sql = "select * from ourmz.menu where menu_name = '{}'".format(menu_input)
@@ -151,7 +151,7 @@ def get_tablebymenu(menu_input, df):
 # df2=get_tablebymenu()
 # df2
 def get_weather(gu):
-    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='kh98124h')
+    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='')
     # Connection 으로부터 Cursor 생성
     curs = conn.cursor()
     sql = "select * from ourmz.gudong WHERE gu like '{}'".format(gu)
@@ -165,7 +165,7 @@ def get_weather(gu):
 def get_menubyweather(nx,ny):
     vilage_weather_url = "http://apis.data.go.kr/1360000/VilageFcstInfoService/getVilageFcst?"
 
-    service_key = "WgdqLLe9BKioZRzKSlzBRo43aFLpDPGWLCYqtn9NPpUU%2FHhv89P2pux0HA%2BPMhpJtxNDVhZTA19rceoGpoxZJA%3D%3D"
+    service_key = ""
 
     today = datetime.datetime.today()
     base_date = today.strftime("%Y%m%d")  # "20200214" == 기준 날짜
@@ -220,7 +220,7 @@ def get_menubyweather(nx,ny):
     weather_cnt = cond
     weather_con = condi
 
-    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8', password='kh98124h')
+    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8', password='')
 
     # Connection 으로부터 Cursor 생성
     curs = conn.cursor()
@@ -500,7 +500,7 @@ def get_feeling(word):
 
 def get_menuname(menuID_list):
     menu = pd.DataFrame(columns=['menuID','menu_name',])
-    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='kh98124h')
+    conn = pymysql.connect(host='127.0.0.1', user='root', db='ourmz', charset='utf8',password='')
     # Connection 으로부터 Cursor 생성
     curs = conn.cursor()
     sql = "select * from ourmz.menu"
