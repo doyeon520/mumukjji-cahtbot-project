@@ -59,8 +59,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Botfather token
-token = "1170114363:AAHc9jKB5XkSYLbMEevq3LK9Vr--7NZFwls"
-chat_id = '906950734'
+token = ""
+chat_id = ''
 
 bot = telegram.Bot(token=token)
 
