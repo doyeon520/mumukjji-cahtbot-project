@@ -13,12 +13,6 @@ import csv
 import pymysql
 import pandas as pd
 from neo4j import GraphDatabase
-#봇 정보 전달
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
-logger = logging.getLogger(__name__)
-token = '1170114363:AAHc9jKB5XkSYLbMEevq3LK9Vr--7NZFwls'
-bb = telegram.Bot(token=token)
-chat_id = 906950734
 
 #장소에따른 데이터프레임
 def get_tablebylocation(place):
